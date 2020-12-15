@@ -1,0 +1,158 @@
+* , *:before, *:after{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+}
+html, body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 19px;
+	position: relative;
+	background-color: #FFFFFF;
+	letter-spacing: 0.5px;
+	color: #404040;
+}
+#home-img{
+	display:block;
+	margin:auto;
+	margin-top:50px;
+}
+#menu{
+	width: 100%;
+	text-align: center;
+}
+.menu-item{
+	display: inline-block;
+	padding: 10px;
+}
+.menu-item:hover{
+	text-decoration: underline;
+}
+a{
+	color: #000000;
+}
+#post-content{
+	margin: auto;
+	width: 768px;
+	padding: 10px;
+	margin-top: 30px;
+}
+#disqus_thread{
+	margin: auto;
+	width: 768px;
+	padding: 10px;
+	margin-top: 30px;
+}
+.custom_ad{
+	margin: auto;
+	width: 768px;
+}
+.single-img{
+	margin: auto;
+	display: block;
+	max-width: 100%;
+}
+.double-img{
+	width: 50%;
+	display: block;
+	float: left;
+	padding-bottom: 15px;
+}
+h1{
+	margin:0;
+	width: 100%;
+	text-align: center;
+}
+.post{
+	margin-bottom: 20px;
+}
+.post h3{
+	margin-bottom: 0;
+	margin-top: 0;
+	color: #DB2C18;
+	display: inline;
+}
+.post h4{
+	margin-top: 0;
+	font-weight: lighter;
+}
+.post a{
+	text-decoration: none;
+}
+.postDate{
+	font-size: 0.8em;
+	display: block;
+}
+p{
+	line-height: 1.5;
+	text-align: justify;
+}
+#header a{
+	text-decoration: none;
+	margin: 10px;
+}
+#header a:hover{
+	text-decoration: underline;
+}
+#warning{
+	text-align: center;
+	color: #ff0000;
+	width: 100%;
+	border: solid 1px #ff0000;
+	padding: 10px;
+}
+#promo{
+	text-align: center;
+	color: #66BB6A;
+	width: 100%;
+	border: solid 1px #66BB6A;
+	padding: 10px;
+}
+#latest-posts{
+	width: 100%;
+	padding-left: 3em;
+	padding-right: 3em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.post-box-img{
+	height: 50%;
+	width: 100%;
+}
+.code{
+	font-family: "Lucida Console";
+}
+#adsMsg {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	display: none;
+	padding: 20px 10px;
+	background: #D30000;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* Specify style to apply when width < 768px (mobile) */
+  #post-content {
+    width: 100%;
+  }
+	#disqus_thread{
+		width: 100%;
+	}
+	.custom_ad{
+		width: 100%;
+	}
+  .single-img{
+	  width: 100%;
+  }
+  .double-img{
+	  width: 100%;
+	  float: none;
+  }
+}

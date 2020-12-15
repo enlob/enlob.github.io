@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55896106-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-55896106-4');
+	</script>
+    
+	<?php if (!isset($_SERVER['HTTP_USER_AGENT']) || stripos($_SERVER['HTTP_USER_AGENT'], 'Speed Insights') === false): ?>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55896106-4"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-55896106-4');
+		</script>
+	<?php endif; ?>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Enrico Lobianco's Blog</title>
+    <meta name="description" content="Welcome on Enrico Lobianco's Blog." />
+	<link rel="stylesheet" href="../style/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+	<div id="header" style="margin:0 auto; text-align:center; margin-top:30px; margin-bottom:30px;">
+		<a href="https://enricolobianco.com/blog/en"><span class="headerItem">Home</span></a>
+		<a href="https://enricolobianco.com/blog"><span style="margin:10px"><img style="vertical-align: middle; margin-right: 3px;" src="../img/it-flag.png" />Italiano</span></a>
+	</div>
+
+	<div id="latest-posts" style="overflow: hidden;">
+		
+        <div class="post">
+			<span class="postDate">February 18, 2020</span>
+			<a href="solutions-linear-system.html">
+				<h3>Number of solutions of system of linear equations based on rank</h3>
+			</a>
+			<h4>We need to study the matrix of the coefficients.</h4>
+		</div>
+        
+        <div class="post">
+			<span class="postDate">October 26, 2019</span>
+			<a href="vmware-hyperv-en.php">
+				<h3>VMware and Device/Credential Guard are not compatible</h3>
+			</a>
+			<h4>The solution? Disable Hyper-V</h4>
+		</div>
+        
+		<div class="post">
+            <span class='postDate'>January 28, 2019</span>
+			<a href="automate-blinds-3.php">
+                <h3>Automate blinds with Sonoff Dual</h3>
+            </a>
+			<h4>Part three: Dashboard Configuration</h4>    
+        </div>
+		
+		<div class="post">
+            <span class='postDate'>January 28, 2019</span>
+            <a href="automate-blinds-2.php">
+                <h3>Automate blinds with Sonoff Dual</h3>
+            </a>
+			<h4>Part two: Sonoff Configuration</h4>
+        </div>
+		
+        <div class="post">
+            <span class='postDate'>October 27, 2018</span>     
+            <a href="automate-blinds.php">
+                <h3>Automate blinds with Sonoff Dual</h3>
+            </a>
+			<h4>Part one: Install Tasmota firmware</h4>
+		</div>
+        
+		
+	</div>
+	<h4 style="text-align:center; font-weight:lighter; margin-top:0;">
+		<i>Download Smart Blinds</i>
+		<br>
+		<a href='https://play.google.com/store/apps/details?id=com.enricolobianco.smartblinds&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Available on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="width:200px;"/></a>
+	</h4>
+</body>
+</html>

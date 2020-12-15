@@ -1,0 +1,167 @@
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55896106-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-55896106-4');
+	</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Find the number of solutions of a system of linear equations by studying the rank of the matrix of the coefficients and comparing it to the number of columns of the matrix.">
+
+	<link rel="stylesheet" href="../style/style.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap" rel="stylesheet">
+
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	<title>Number of solutions of system of linear equations based on rank</title>
+
+</head>
+
+<body style="letter-spacing:0">
+
+	<div id="post-content">
+
+		<h1 style="font-weight:700; margin-bottom:40px;">Number of solutions of system of linear equations based on rank</h1>
+		<!--<h2 style="text-align:center; font-weight:300; margin-top:10px; margin-bottom:40px;">Subtitle</h2>-->
+
+		<p style="margin-bottom:0; font-size:0.85rem; font-weight:300;"><i>Created: </i>02-18-2020</p>
+		<p style="margin-top: 0; margin-bottom:50px; font-size:0.85rem; font-weight:300;"><i>Last updated: </i>02-18-2020</p>
+
+		<p>Suppose you're asked to determine the number of solutions of the system \( Ax=b \) with \( A \in \mathbb{R}^{m \times n} \), \( x \in \mathbb{R}^{n \times 1} \) and \( b \in \mathbb{R}^{m \times 1} \)
+
+		\[ \begin{pmatrix} a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m,1} & a_{m,2} & \cdots & a_{m,n} \end{pmatrix} \cdot \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix} = \begin{pmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{pmatrix} \]
+
+		First let's write the matrix as a vector of its columns
+
+		\[ A = \begin{pmatrix} a_1 & a_2 & \dots & a_n \end{pmatrix} \]
+
+		where
+
+		\[ a_1 = \begin{pmatrix} a_{1,1} \\ a_{2,1} \\ \vdots \\ a_{m,1} \end{pmatrix}, a_2 = \begin{pmatrix} a_{1,2} \\ a_{2,2} \\ \vdots \\ a_{m,2} \end{pmatrix}, \cdots , a_n = \begin{pmatrix} a_{1,n} \\ a_{2,n} \\ \vdots \\ a_{m,n} \end{pmatrix} \]
+
+		Suppose \( rank(A)=m \). This means that a basis for the image of the matrix \( A \) is made of \( m \) linearly independent vectors. Remember that \( m \) is also the number of rows of the matrix. Though we don't know if \( m \) is larger, smaller or equal to \( n \) (number of columns). So we need to study three different cases:
+		</p>
+
+		<ol>
+			<li>
+				\( m < n \)
+				<br><br>
+				For simplicity suppose that the vectors of the basis are the first \( m \) vectors. That said, it's convenient to write the matrix as
+
+				\[ A = \begin{pmatrix} a_1 & a_2 & \dots & a_m & a_{m+1} & \dots & a_n \end{pmatrix} \]
+
+				If \( b \in Im(A) \) it means that \( b \) can be obtained as a linear combination of the basis vectors
+
+				\[ x_1a_1+x_2a_2+\dots +x_ma_m=b \]
+
+				therefore we must not consider the remaining columns of the matrix, so we put
+
+				\[ x_{m+1}=\dots=x_n=0 \]
+
+				This means we have found one solution of the system \( Ax=b \) and that is
+
+				\[ x=\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \\ 0 \\ \vdots \\ 0 \end{pmatrix} \]
+
+				<b>Now the question is: is this the only solution?</b> The answer is NO.
+				<br>
+				<b>Next question is: if it's not the only one, how many are there?</b> Let's find out.
+				<br><br>
+				We found the first solution using the equation
+
+				\[ x_1a_1+x_2a_2+\dots +x_ma_m + x_{m+1} a_{m+1} + \dots + x_n a_n=b \]
+
+				where \( x_1, x_2, \dots , x_m \in \mathbb{R} \) and \( x_{m+1}=\dots=x_n=0 \).
+				<br>
+				It's clear that \( b \) is determined by the first \( m \) unknowns and the remaining unknowns must be zero.
+				<br>
+				We know that the columns \( a_{m+1},\dots,a_n \) are linearly dependent. This means that we can obtain a null linear combination of those columns with the unknowns not all to zero. In other words, it means that there exist at least one set of unknowns \( x_{m+1},\dots,x_n \) not all zero such that \( x_{m+1}a_{m+1}+\dots +x_na_n=0 \)
+				<br>
+
+				Once you find one set of those unknowns, you can write a new solutions
+
+				\[ \overline x=\begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_m \\ x_{m+1} \\ \vdots \\ x_n \end{pmatrix} \]
+
+				You can double check that \( \overline x \) is a solution: it needs to be \( A \overline x = b \)
+
+				\[ A\overline x= x_1a_1+x_2a_2+\dots +x_ma_m+x_{m+1}a_{m+1}+\dots +x_na_n \]
+
+				But we know that \( x_{m+1}a_{m+1}+\dots +x_na_n=0 \) so that becomes
+
+				\[ A\overline x= x_1a_1+x_2a_2+\dots +x_ma_m = b \]
+
+				<br>
+
+				The number of solutions depends on the number of combinations of the unknowns \( x_{m+1},\dots,x_n \) not all zero such that \( x_{m+1}a_{m+1}+\dots +x_na_n=0 \). Though if one combination exists, there exist infinite. See this example
+
+				\[ 4x_1+5x_2+9x_3+7x_4=0 \]
+
+				One solution is
+
+				\[ x_1 = 1, x_2 = 1, x_3 = -1, x_4 = 0 \]
+
+				But if you choose any \( \alpha \in \mathbb{R} \), the following is a solution as well
+
+				\[ x_1 = \alpha, x_2 = \alpha, x_3 = -\alpha, x_4 = 0 \]
+
+				This means you have infinite solutions.
+				<br><br>
+				It is common to say that a system \( Ax=b \) has \( \infty^{n-m} \) solutions because, although they are infinite, the number of solutions depends on the number of linearly dependent columns of the matrix \( A \) which is equal to the total number of columns minus the rank (number of rows), thus \( n-m \).
+
+			</li>
+			<br>
+			<li>
+				\( m=n \)
+				<br><br>
+				Then \( A \) is a square matrix there are as many equations as there are unknowns and the solution must be unique.
+				<br><br>
+				If there were two different solutions, \( x \) and \( y \), it'd be true that \( Ax=b \) and \( Ay = b \). Subtructing the two, we'd have \( A(x-y)=0 \).  This would lead to suppose that \( x-y=0 \) because we know that all the columns of \( A \) are linearly independent so the only way to obtain a null linear combination is to multiply for zero. But supposing that \( x-y=0 \implies x=y \) breaks the hypothesis that \( x \) and \( y \) are two different solutions.
+			</li>
+		</ol>
+
+		<p>
+			Now suppose that \( rank(A)=r < m \). Similarly to before, It can be proved that the number of solutions in this case is \( \infty^{n-r} \).
+		</p>
+
+	</div>
+
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- custom horizontal ad -->
+	<ins class="adsbygoogle custom_ad"
+	     style="display:block"
+	     data-ad-client="ca-pub-3570140930678126"
+	     data-ad-slot="4668161109"
+	     data-ad-format="auto"
+	     data-full-width-responsive="true"></ins>
+	<script>
+	     (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
+	<div id="disqus_thread"></div>
+	<script>
+
+	/**
+	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+	/*
+	var disqus_config = function () {
+	this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+	this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+	};
+	*/
+	(function() { // DON'T EDIT BELOW THIS LINE
+	var d = document, s = d.createElement('script');
+	s.src = 'https://enricolobianco.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+</html>
