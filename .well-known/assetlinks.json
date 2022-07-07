@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.enricolobianco.dashboardforshelly",
+    "sha256_cert_fingerprints":
+    ["67:99:D8:B8:1D:37:F6:EE:CC:8C:1E:E8:47:8F:DB:D7:63:39:C7:CF:98:94:09:43:2A:F1:CE:2A:A7:C9:5A:61"]
+  }
+}]
